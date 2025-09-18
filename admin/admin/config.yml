@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main # ou o nome do seu branch principal
+
+media_folder: "imagens/uploads"
+public_folder: "/imagens/uploads"
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    folder: "_produtos" # Usamos um underscore para o Eleventy saber que é uma pasta de dados
+    create: true
+    fields:
+      - { label: "Nome do Produto", name: "title", widget: "string" }
+      - { label: "Imagem do Produto", name: "image", widget: "image" }
+      - { label: "Descrição Curta", name: "summary", widget: "text" }
