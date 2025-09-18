@@ -1,16 +1,92 @@
+# ===================================================================
+# CONFIG.YML V1.0 - VETZ.CARE HUB DIGITAL
+# Tradução técnica do Dossiê Estratégico.
+# ===================================================================
+
+# --- Conexão e Configurações Base ---
 backend:
   name: git-gateway
-  branch: main # ou o nome do seu branch principal
-
+  branch: main
 media_folder: "imagens/uploads"
 public_folder: "/imagens/uploads"
+locale: 'pt'
+publish_mode: editorial_workflow
 
+# ===================================================================
+# COLEÇÕES DE CONTEÚDO (O Painel de Comando da Clínica)
+# ===================================================================
 collections:
-  - name: "produtos"
-    label: "Produtos"
-    folder: "_produtos" # Usamos um underscore para o Eleventy saber que é uma pasta de dados
+  # --- 1. CONFIGURAÇÕES GLOBAIS (O "RG" DA CLÍNICA) ---
+  - name: "settings"
+    label: "⚙️ Configurações Gerais da Clínica"
+    files:
+      - label: "Informações Principais (para Google e Rodapé)"
+        name: "dados_clinica"
+        file: "_data/clinica.yml"
+        fields:
+          - { label: "Nome Oficial da Clínica", name: "nome", widget: "string", default: "VetZ.Care" }
+          - { label: "Slogan", name: "slogan", widget: "string", default: "A saúde do seu pet, nossa maior expertise." }
+          - { label: "Morada Completa", name: "morada", widget: "string", default: "rua 5, chacara 122, lote 17, loja 2 cep 72006060" }
+          - { label: "Telefone Principal", name: "telefone", widget: "string", default: "61991659880" }
+          - { label: "Email de Contato", name: "email", widget: "string", default: "planobioblogpost@gmail.com" }
+          - { label: "WhatsApp Business", name: "whatsapp", widget: "string", default: "61991659880" }
+
+  # --- 2. GESTÃO DO CORPO CLÍNICO (O MOTOR DO E-E-A-T) ---
+  - name: "especialistas"
+    label: "🩺 Corpo Clínico"
+    label_singular: "Novo Especialista"
+    folder: "_especialistas"
     create: true
     fields:
-      - { label: "Nome do Produto", name: "title", widget: "string" }
-      - { label: "Imagem do Produto", name: "image", widget: "image" }
-      - { label: "Descrição Curta", name: "summary", widget: "text" }
+      - { label: "Nome Completo e Título", name: "title", widget: "string", hint: "Ex: Dra. Ana Sofia Mendes" }
+      - { label: "CRMV", name: "crmv", widget: "string" }
+      - { label: "Foto de Perfil", name: "foto", widget: "image" }
+      - { label: "Especialidades", name: "especialidades", widget: "list", hint: "Adicione as áreas de foco, ex: Dermatologia, Cardiologia" }
+      - { label: "Biografia Profissional", name: "bio", widget: "markdown" }
+
+  # --- 3. SERVIÇOS CLÍNICOS (O FUNIL DE VENDAS) ---
+  - name: "servicos"
+    label: "💉 Serviços Clínicos"
+    label_singular: "Novo Serviço"
+    folder: "_servicos"
+    create: true
+    fields:
+      - { label: "Nome do Serviço", name: "title", widget: "string", hint: "Ex: Check-up Geriátrico Canino" }
+      - { label: "Descrição Completa", name: "body", widget: "markdown", hint: "Detalhe o que é o serviço, para quem é indicado e quais os benefícios." }
+      - { label: "Imagem ou Ícone do Serviço", name: "image", widget: "image" }
+      - { label: "Call-to-Action para WhatsApp", name: "cta_whatsapp", widget: "string", default: "Agendar este serviço via WhatsApp", hint: "Texto do botão que iniciará a conversa." }
+
+  # --- 4. PRODUTOS DA LOJA (O PET SHOP) ---
+  - name: "produtos"
+    label: "🛍️ Produtos da Loja"
+    # ... (Estrutura similar à de serviços, com campos para Preço, Marca, etc.)
+
+  # --- 5. CONTEÚDO DE AUTORIDADE (O ÍMÃ DE TRÁFEGO) ---
+  - name: "artigos"
+    label: "📚 Artigos e Guias (Blog)"
+    # ... (Estrutura que já definimos, com autor relacionado aos especialistas, categorias, etc.)
+
+  # --- 6. DOMINAÇÃO LOCAL (SEO DE BAIRRO) ---
+  - name: "bairros"
+    label: "📍 Páginas de Bairro (Dominação Local)"
+    # ... (Estrutura com reviews do GBP, como planeado)
+
+  # --- 7. ENGAJAMENTO (FAQ E CLUBE) ---
+  - name: "paginas_fixas"
+    label: "📄 Páginas Fixas (FAQ, Clube)"
+    files:
+      - label: "Página de Perguntas Frequentes (FAQ)"
+        name: "faq"
+        file: "faq.md"
+        fields:
+          - { label: "Título da Página", name: "title", widget: "string", default: "Perguntas Frequentes" }
+          - label: "Lista de Perguntas e Respostas"
+            name: "faq_lista"
+            widget: "list"
+            fields:
+              - { label: "Pergunta", name: "pergunta", widget: "string" }
+              - { label: "Resposta", name: "resposta", widget: "markdown" }
+      - label: "Página do Clube de Benefícios"
+        name: "clube"
+        file: "clube.md"
+        # ... (Campos para o título, descrição dos benefícios, etc.)
