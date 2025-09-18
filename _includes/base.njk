@@ -3,19 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | Revista Digital</title>
+  
+  <title>{{ title }} | {{ clinica.nome }}</title>
+  
   <link rel="stylesheet" href="/css/main.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "{{ clinica.nome }}",
+    "description": "{{ clinica.slogan }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ clinica.morada }}"
+    },
+    "telephone": "+55{{ clinica.telefone | replace: '.', '' }}",
+    "email": "{{ clinica.email }}"
+  }
+  </script>
+  </head>
 <body>
   <header>
-    <h1>Revista Digital</h1>
+    <img src="/imagens/VetZ.Care Logo.png" alt="Logótipo da {{ clinica.nome }}" height="50">
+    <h1>{{ clinica.nome }}</h1>
+    <p>{{ clinica.slogan }}</p>
   </header>
+  
   <main>
     {{ content | safe }}
   </main>
+  
   <footer>
-    <p>&copy; 2025 - Seu Modelo de Negócio</p>
+    <p>&copy; {% year %} - {{ clinica.nome }}</p>
+    <p>Telefone: {{ clinica.telefone }} | Email: {{ clinica.email }}</p>
   </footer>
 </body>
 </html>
