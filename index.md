@@ -1,4 +1,5 @@
 ---
-title: Página Inicial do Protótipo
+title: Página Inicial
+layout: base.njk
 ---
-# O Protótipo está no Ar!
+## Bem-vindo a Revista Digital no Ar!
