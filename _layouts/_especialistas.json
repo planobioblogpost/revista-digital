@@ -1,4 +1,0 @@
-{
-  "layout": "especialista.njk",
-  "permalink": "/equipa/{{ title | slugify }}/"
-}
