@@ -32,7 +32,7 @@ layout: "base.njk"
       </div>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1583337130417-2346a5be24c1?q=80&w=2070&auto=format&fit=crop" alt="Filhote de cão a receber uma vacina" class="card-image">
+      <img src="https://imagens/uploads/Vetz.Care-gatos.png" alt="Filhote de cão a receber uma vacina" class="card-image">
       <div class="card-content">
         <h3>Protocolo de Vacinação para Filhotes</h3>
         <p>Proteja quem você ama desde os primeiros passos. O nosso protocolo garante a imunização completa e segura para o seu novo companheiro.</p>
