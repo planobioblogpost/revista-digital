@@ -1,5 +1,5 @@
 ---
- "VetZ.Care: Cuidado e Expertise para o seu Pet em Brasília"
+title: "VetZ.Care: Cuidado e Expertise para o seu Pet em Brasília"
 layout: "base.njk"
 ---
 <div class="container">
