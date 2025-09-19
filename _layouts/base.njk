@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | {{ clinica.nome }}</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "{{ clinica.nome }}", "description": "{{ clinica.slogan }}",
+    "image": "/imagens/VetZ.Care Logo.png", "address": { "@type": "PostalAddress", "streetAddress": "{{ clinica.morada }}" },
+    "telephone": "+55{{ clinica.telefone | replace('.', '') }}", "email": "{{ clinica.email }}"
+  }
+  </script>
+</head>
 <body>
   <header class="site-header">
     <div class="container">
