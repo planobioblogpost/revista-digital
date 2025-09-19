@@ -30,7 +30,10 @@ layout: "base.njk"
   "publisher": {
     "@type": "Organization",
     "name": "{{ clinica.nome }}"
-  }
+},
+  "datePublished": "{{ page.date | date }}",
+  "dateModified": "{{ page.date | date }}" // <-- LINHA ADICIONADA
+}
 }
 </script>
 
