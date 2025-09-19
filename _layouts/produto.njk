@@ -1,0 +1,23 @@
+---
+layout: "base.njk"
+---
+<article class="container produto-pagina">
+  <h1>{{ title }}</h1>
+  <img src="{{ image }}" alt="{{ title }}">
+  <div class="produto-preco">R$ {{ preco }}</div>
+  
+  <blockquote>"{{ mensagem_dra }}" - Dra. Ana Sofia Mendes</blockquote>
+
+  <h3>Principais Benefícios:</h3>
+  <ul>
+    {% for beneficio in beneficios %}
+      <li>{{ beneficio }}</li>
+    {% endfor %}
+  </ul>
+
+  <div>{{ content | safe }}</div>
+
+  <a href="https://wa.me/{{ clinica.whatsapp }}?text=Olá! Tenho interesse no produto: {{ title }}" class="cta-button">Comprar via WhatsApp</a>
+</article>
+
+<script type="application/ld+json">{...}</script>
