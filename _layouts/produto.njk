@@ -2,22 +2,49 @@
 layout: "base.njk"
 ---
 <article class="container produto-pagina">
-  <h1>{{ title }}</h1>
-  <img src="{{ image }}" alt="{{ title }}">
-  <div class="produto-preco">R$ {{ preco }}</div>
-  
-  <blockquote>"{{ mensagem_dra }}" - Dra. Ana Sofia Mendes</blockquote>
+  <div class="produto-grid">
+    <div class="produto-imagem">
+      <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    <div class="produto-info">
+      <h1>{{ title }}</h1>
+      {% if preco %}
+        <div class="produto-preco">R$ {{ preco }}</div>
+      {% endif %}
+      <p class="produto-summary">{{ summary }}</p>
+      
+      {% if mensagem_dra and mensagem_dra.ativo %}
+      <blockquote class="mensagem-dra">
+        "{{ mensagem_dra.texto }}"
+        <footer>— {{ mensagem_dra.autor }}</footer>
+      </blockquote>
+      {% endif %}
 
-  <h3>Principais Benefícios:</h3>
-  <ul>
-    {% for beneficio in beneficios %}
-      <li>{{ beneficio }}</li>
-    {% endfor %}
-  </ul>
+      <a href="https://wa.me/{{ clinica.whatsapp }}?text=Olá! Tenho interesse no produto: {{ title | urlencode }}" target="_blank" class="cta-button">Comprar via WhatsApp</a>
+    </div>
+  </div>
 
-  <div>{{ content | safe }}</div>
-
-  <a href="https://wa.me/{{ clinica.whatsapp }}?text=Olá! Tenho interesse no produto: {{ title }}" class="cta-button">Comprar via WhatsApp</a>
+  <div class="produto-detalhes">
+    {% if beneficios %}
+      <h2>Principais Benefícios:</h2>
+      <ul>
+        {% for beneficio in beneficios %}
+          <li>{{ beneficio }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    
+    <h2>Descrição Completa</h2>
+    {{ content | safe }}
+  </div>
 </article>
 
 <script type="application/ld+json">{...}</script>
+<style>
+  .produto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .produto-imagem img { width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  .produto-preco { font-size: 2.5em; font-weight: bold; color: var(--cor-verde-petroleo); margin: 1rem 0; }
+  .mensagem-dra { border-left: 4px solid var(--cor-laranja-destaque); padding-left: 1.5rem; font-style: italic; font-size: 1.1em; margin: 2rem 0; }
+  .mensagem-dra footer { font-style: normal; font-weight: bold; margin-top: 0.5rem; font-size: 0.9em; color: var(--cor-azul-escuro); }
+  .produto-detalhes { margin-top: 4rem; }
+</style>
