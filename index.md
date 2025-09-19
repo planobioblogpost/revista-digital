@@ -24,7 +24,7 @@ layout: "base.njk"
   <h2 class="section-title">Nossos Serviços Clínicos</h2>
   <div class="card-grid">
     <div class="card">
-      <img src="https://[images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop](https://imagens/uploads/Vetz.Care-caes.png" alt="Cão idoso a ser examinado" class="card-image">
+      <img src="https://imagens/uploads/Vetz.Care-caes.png" alt="Cão idoso a ser examinado" class="card-image">
       <div class="card-content">
         <h3>Check-up Geriátrico Canino</h3>
         <p>Um programa completo de avaliação preventiva para garantir mais qualidade de vida para o seu melhor amigo na terceira idade.</p>
