@@ -65,12 +65,14 @@ collections:
     folder: "_produtos"
     create: true
     fields:
-      - { label: "Nome do Produto", name: "title", widget: "string" }
-      - { label: "Categoria", name: "categoria", widget: "select", options: ["Cães", "Gatos"] }
-      - { label: "Imagem do Produto", name: "image", widget: "image" }
-      - { label: "Descrição Curta", name: "summary", widget: "text" }
-      - { label: "Descrição Completa", name: "body", widget: "markdown", required: false }
-
+  - { label: "Nome do Produto", name: "title", widget: "string" }
+  - { label: "Categoria", name: "categoria", widget: "select", options: ["Cães", "Gatos"] }
+  - { label: "Imagem Principal do Produto", name: "image", widget: "image" }
+  - { label: "Preço (ex: 49.90)", name: "preco", widget: "string", required: false }
+  - { label: "Mensagem da Dra. Ana (Curadoria)", name: "mensagem_dra", widget: "text" }
+  - { label: "Principais Benefícios", name: "beneficios", widget: "list" }
+  - { label: "Descrição Completa", name: "body", widget: "markdown" }
+  
   # --- 5. CONTEÚDO DE AUTORIDADE (O ÍMÃ DE TRÁFEGO) ---
   - name: "artigos"
     label: "📚 Artigos e Guias (Blog)"
