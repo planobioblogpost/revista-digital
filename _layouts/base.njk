@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | {{ clinica.nome }}</title>
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VeterinaryCare",
-    "name": "{{ clinica.nome }}", "description": "{{ clinica.slogan }}",
-    "image": "/imagens/VetZ.Care Logo.png", "address": { "@type": "PostalAddress", "streetAddress": "{{ clinica.morada }}" },
-    "telephone": "+55{{ clinica.telefone | replace('.', '') }}", "email": "{{ clinica.email }}"
-  }
-  </script>
-</head>
+  </head>
 <body>
   <header class="site-header">
     <div class="container">
       <a href="/" class="site-logo">
-        <img src="/imagens/uploads/logomarca-Vetz.Care.png" alt="Logótipo da {{ clinica.nome }}">
+        <img src="/imagens/VetZ.Care Logo.png" alt="Logótipo da {{ clinica.nome }}">
       </a>
       <nav class="main-nav">
         <ul>
@@ -39,10 +25,25 @@
   </main>
   
   <footer class="site-footer">
-    <div class="container">
-      <p>{{ clinica.slogan }}</p>
-      <p>&copy; {% year %} - {{ clinica.nome }}</p>
-      <p>Telefone: {{ clinica.telefone }} | Email: <a href="mailto:{{ clinica.email }}">{{ clinica.email }}</a></p>
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p>{{ clinica.slogan }}</p>
+        <p>&copy; {% year %} - {{ clinica.nome }}</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Navegue</h4>
+        <ul>
+          <li><a href="/servicos/">Serviços</a></li>
+          <li><a href="/produtos/">Produtos</a></li>
+          <li><a href="/blog/">Revista</a></li>
+          <li><a href="/equipa/">Corpo Clínico</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <p>Telefone: {{ clinica.telefone }}</p>
+        <p>Email: <a href="mailto:{{ clinica.email }}">{{ clinica.email }}</a></p>
+      </div>
     </div>
   </footer>
 </body>
