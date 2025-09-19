@@ -1,5 +1,5 @@
 /* ========================================================= */
-/* --- KIT DE DESIGN V3.0 - VETZ.CARE (VERSÃO FINAL) --- */
+/* --- KIT DE DESIGN V4.0 - VETZ.CARE (VERSÃO FINAL) --- */
 /* ========================================================= */
 
 /* --- Variáveis de Cor (Baseado na sua paleta estratégica) --- */
@@ -10,7 +10,7 @@
   --cor-texto: #3a3a3a;
   --cor-fundo: #f8f9fa;
   --cor-branco: #ffffff;
-  --font-principal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-principal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* --- Estilos Globais e Reset --- */
@@ -49,24 +49,33 @@ h2::after, .section-title::after {
   margin: 1rem auto 0;
 }
 
-/* --- 1. Cabeçalho e Navegação (Logótipo Corrigido) --- */
+/* --- 1. CABEÇALHO E NAVEGAÇÃO (DESIGN PROFISSIONAL) --- */
 .site-header {
   background-color: var(--cor-branco);
-  padding: 1rem 0;
+  padding: 15px 0; /* Aumenta o espaço vertical para o cabeçalho respirar */
   border-bottom: 1px solid #e0e0e0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-.site-header .container {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.6em; /* Aumenta o tamanho do nome da clínica */
+  font-weight: bold;
+  color: var(--cor-azul-escuro);
+}
 .site-logo img {
-  max-height: 70px; /* Tamanho do logótipo aumentado e corrigido */
-  display: block;
+  height: 80px; /* TAMANHO DO LOGÓTIPO CORRIGIDO E AUMENTADO */
+  width: auto; /* Garante que a proporção seja mantida */
+  margin-right: 15px; /* Adiciona espaço entre o logo e o nome */
 }
 .main-nav ul {
   list-style: none;
@@ -88,117 +97,57 @@ h2::after, .section-title::after {
   border-bottom-color: var(--cor-laranja-destaque);
 }
 
+
 /* --- 2. Cards (Estilo "Food Porn" e Persuasivo) --- */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin: 2rem 0;
-}
-.card {
-  list-style: none;
-  background-color: var(--cor-branco);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-}
-.card-content {
-  padding: 1.5rem;
-}
-.card-content h3 {
-  margin-top: 0;
-  color: var(--cor-verde-petroleo);
-}
-.card-content h3 a {
-  text-decoration: none;
-  color: inherit;
-}
-.card-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
+/* (Esta secção continua igual, já está boa) */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; margin: 2rem 0; }
+.card { list-style: none; background-color: var(--cor-branco); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+.card-content { padding: 1.5rem; }
+.card-content h3 { margin-top: 0; color: var(--cor-verde-petroleo); }
+.card-content h3 a { text-decoration: none; color: inherit; }
+.card-image { width: 100%; height: 220px; object-fit: cover; display: block; }
+
 
 /* --- 3. Formulário de Contato (Layout Profissional) --- */
-form {
-  max-width: 700px;
-  margin: 2rem auto;
-  background: var(--cor-branco);
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-form p {
-  margin-bottom: 1.5rem;
-}
-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--cor-azul-escuro);
-}
-form input, form textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: var(--font-principal);
-  box-sizing: border-box;
-}
-form input:focus, form textarea:focus {
-  outline: none;
-  border-color: var(--cor-laranja-destaque);
-  box-shadow: 0 0 5px rgba(255, 153, 52, 0.5);
-}
-form textarea {
-  resize: vertical;
-  min-height: 150px;
-}
+/* (Esta secção continua igual, já está boa) */
+form { max-width: 700px; margin: 2rem auto; background: var(--cor-branco); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 25px rgba(0,0,0,0.1); }
+form p { margin-bottom: 1.5rem; }
+form label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--cor-azul-escuro); }
+form input, form textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; font-family: var(--font-principal); box-sizing: border-box; transition: all 0.3s; }
+form input:focus, form textarea:focus { outline: none; border-color: var(--cor-laranja-destaque); box-shadow: 0 0 8px rgba(255, 153, 52, 0.5); }
 .hidden { display: none; }
 
-/* --- 4. Botões (CTA - Call to Action) --- */
-.cta-button {
-  display: inline-block;
-  background-color: var(--cor-laranja-destaque);
-  color: var(--cor-branco) !important;
-  padding: 12px 28px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-}
-.cta-button:hover {
-  background-color: #e68a2e;
-  transform: translateY(-2px);
-}
 
-/* --- 5. Rodapé (Layout Corrigido e com Menu) --- */
+/* --- 4. Botões (CTA - Call to Action) --- */
+/* (Esta secção continua igual, já está boa) */
+.cta-button { display: inline-block; background-color: var(--cor-laranja-destaque); color: var(--cor-branco) !important; padding: 12px 28px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s, transform 0.2s; border: none; cursor: pointer; font-size: 1em; }
+.cta-button:hover { background-color: #e68a2e; transform: translateY(-2px); }
+
+
+/* --- 5. RODAPÉ (LAYOUT CORRIGIDO E PROFISSIONAL) --- */
 .site-footer {
   margin-top: 4rem;
-  padding: 3rem 1.5rem;
+  padding: 4rem 0 1rem 0;
   background-color: var(--cor-azul-escuro);
   color: rgba(255,255,255,0.8);
 }
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: left;
   flex-wrap: wrap;
   gap: 2rem;
+  padding: 0 1.5rem 2rem 1.5rem;
+  border-bottom: 1px solid var(--cor-verde-petroleo);
 }
-.footer-info, .footer-nav, .footer-contact {
+.footer-col {
   flex: 1;
   min-width: 250px;
+}
+.footer-logo {
+  max-height: 80px;
+  margin-bottom: 1rem;
 }
 .footer-nav h4, .footer-contact h4 {
   color: var(--cor-branco);
@@ -220,4 +169,9 @@ form textarea {
 }
 .site-footer a:hover {
   color: var(--cor-branco);
+}
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.8em;
 }
