@@ -1,0 +1,46 @@
+---
+layout: "base.njk"
+---
+<article class="container artigo-pagina">
+  <header class="artigo-cabecalho">
+    <h1 class="artigo-titulo">{{ title }}</h1>
+    <p class="artigo-autor">
+      Escrito por: <a href="/equipa/{{ autor | slugify }}/">{{ autor }}</a>
+    </p>
+    {% if image %}
+      <img src="{{ image }}" alt="{{ title }}" class="artigo-imagem-destaque">
+    {% endif %}
+  </header>
+
+  <div class="artigo-conteudo">
+    {{ content | safe }}
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "image": "{{ image }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ autor }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ clinica.nome }}"
+  }
+}
+</script>
+
+<style>
+  .artigo-pagina .artigo-cabecalho { text-align: center; margin-bottom: 2rem; }
+  .artigo-pagina .artigo-titulo { font-size: 2.8em; margin-bottom: 0.5rem; }
+  .artigo-pagina .artigo-autor { font-style: italic; color: #777; }
+  .artigo-pagina .artigo-autor a { color: var(--cor-verde-petroleo); text-decoration: none; }
+  .artigo-pagina .artigo-autor a:hover { text-decoration: underline; }
+  .artigo-pagina .artigo-imagem-destaque { width: 100%; max-width: 800px; height: auto; border-radius: 8px; margin-top: 1.5rem; }
+  .artigo-pagina .artigo-conteudo { max-width: 800px; margin: 0 auto; }
+  .artigo-pagina .artigo-conteudo h2 { margin-top: 2.5rem; }
+</style>
