@@ -1,18 +1,14 @@
 module.exports = function(eleventyConfig) {
-  // Passa as pastas de CSS, imagens e admin para o site final
+  // BLOCO 1: O DEPARTAMENTO DE LOGÍSTICA
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("imagens");
   eleventyConfig.addPassthroughCopy("admin");
 
-  // Adiciona um "shortcode" para que possamos usar {% year %} nos templates
+  // BLOCO 2: A ESCOLA DE IDIOMAS (COMANDOS PERSONALIZADOS)
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-
-  // ===================================================================
-  // A NOVA LIÇÃO: A DEFINIÇÃO DO FILTRO "LIMIT"
-  // ===================================================================
-  // Isto ensina o Eleventy a entender "limit(3)" e pegar apenas os 3 primeiros itens de uma lista.
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
+  // BLOCO 3: A PLANTA BAIXA DA FÁBRICA
   return {
     dir: {
       input: ".",
