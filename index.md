@@ -6,7 +6,7 @@ layout: "base.njk"
   <h2 class="section-title">Nossos Serviços Clínicos</h2>
   <ul class="card-grid">
     <li class="card">
-      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069" alt="Cão idoso a ser examinado" class="card-image">
+      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop" alt="Cão idoso a ser examinado" class="card-image">
       <div class="card-content">
         <h3>Check-up Geriátrico Canino</h3>
         <p>Um programa completo de avaliação preventiva para garantir mais qualidade de vida para o seu melhor amigo na terceira idade.</p>
@@ -14,7 +14,7 @@ layout: "base.njk"
       </div>
     </li>
     <li class="card">
-      <img src="https://images.unsplash.com/photo-1583337130417-2346a5be24c1?q=80&w=2070" alt="Filhote de cão a receber uma vacina" class="card-image">
+      <img src="https://images.unsplash.com/photo-1583337130417-2346a5be24c1?q=80&w=2070&auto=format&fit=crop" alt="Filhote de cão a receber uma vacina" class="card-image">
       <div class="card-content">
         <h3>Protocolo de Vacinação para Filhotes</h3>
         <p>Proteja quem você ama desde os primeiros passos. O nosso protocolo garante a imunização completa e segura para o seu novo companheiro.</p>
@@ -22,6 +22,7 @@ layout: "base.njk"
       </div>
     </li>
   </ul>
+
 
   <h2 class="section-title">Nossa Linha de Rações</h2>
   <ul class="card-grid">
