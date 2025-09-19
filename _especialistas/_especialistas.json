@@ -1,4 +1,5 @@
 {
   "layout": "especialista.njk",
-  "permalink": "/equipa/{{ title | slugify }}/"
+  "permalink": "/equipa/{{ title | slugify }}/",
+  "tags": ["especialistas"]
 }
