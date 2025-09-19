@@ -64,14 +64,21 @@ collections:
     label_singular: "Novo Produto"
     folder: "_produtos"
     create: true
-    fields:
-  - { label: "Nome do Produto", name: "title", widget: "string" }
-  - { label: "Categoria", name: "categoria", widget: "select", options: ["Cães", "Gatos"] }
-  - { label: "Imagem Principal do Produto", name: "image", widget: "image" }
-  - { label: "Preço (ex: 49.90)", name: "preco", widget: "string", required: false }
-  - { label: "Mensagem da Dra. Ana (Curadoria)", name: "mensagem_dra", widget: "text" }
-  - { label: "Principais Benefícios", name: "beneficios", widget: "list" }
-  - { label: "Descrição Completa", name: "body", widget: "markdown" }
+   fields:
+      - { label: "Nome do Produto", name: "title", widget: "string" }
+      - { label: "Categoria", name: "categoria", widget: "select", options: ["Cães", "Gatos"] }
+      - { label: "Imagem Principal do Produto", name: "image", widget: "image" }
+      - { label: "Preço (ex: 49.90)", name: "preco", widget: "string", required: false }
+      - { label: "Descrição Curta (para a listagem)", name: "summary", widget: "text" }
+      - label: "Curadoria (Mensagem da Dra.)"
+        name: "mensagem_dra"
+        widget: "object"
+        fields:
+          - { label: "Ativar Mensagem da Dra.?", name: "ativo", widget: "boolean", default: true }
+          - { label: "Especialista", name: "autor", widget: "relation", collection: "especialistas", search_fields: ["title"], value_field: "title" }
+          - { label: "Mensagem", name: "texto", widget: "text", hint: "Uma frase curta e de impacto sobre o produto." }
+      - { label: "Principais Benefícios (Lista)", name: "beneficios", widget: "list" }
+      - { label: "Descrição Completa do Produto", name: "body", widget: "markdown" }
   
   # --- 5. CONTEÚDO DE AUTORIDADE (O ÍMÃ DE TRÁFEGO) ---
   - name: "artigos"
