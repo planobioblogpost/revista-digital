@@ -1,0 +1,4 @@
+{
+  "layout": "servico.njk",
+  "permalink": "/servicos/{{ title | slugify }}/"
+}
