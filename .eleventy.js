@@ -1,15 +1,15 @@
 module.exports = function(eleventyConfig) {
-  // BLOCO 1: O DEPARTAMENTO DE LOGÍSTICA
+  // ORDEM VITAL: Copia as pastas de design, imagens e admin para o site final.
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("imagens");
   eleventyConfig.addPassthroughCopy("admin");
 
-  // BLOCO 2: A ESCOLA DE IDIOMAS (COMANDOS PERSONALIZADOS)
+  // Ensina o sistema a entender comandos personalizados como {% year %} e | limit.
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
-  // BLOCO 3: A PLANTA BAIXA DA FÁBRICA
   return {
+    // A PLANTA BAIXA CORRETA DA FÁBRICA
     dir: {
       input: ".",
       includes: "_includes",
