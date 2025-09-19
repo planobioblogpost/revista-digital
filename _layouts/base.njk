@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>{{ title }} | {{ clinica.nome }}</title>
-  
   <link rel="stylesheet" href="/css/main.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "VeterinaryCare",
     "name": "{{ clinica.nome }}",
     "description": "{{ clinica.slogan }}",
+    "image": "/imagens/VetZ.Care Logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "{{ clinica.morada }}"
@@ -23,21 +21,17 @@
     "email": "{{ clinica.email }}"
   }
   </script>
-  </head>
+</head>
 <body>
   <header>
-    <img src="/imagens/VetZ.Care Logo.png" alt="Logótipo da {{ clinica.nome }}" height="50">
-    <h1>{{ clinica.nome }}</h1>
-    <p>{{ clinica.slogan }}</p>
+    <img src="/imagens/VetZ.Care Logo.png" alt="Logótipo da {{ clinica.nome }}" height="70">
   </header>
-  
   <main>
     {{ content | safe }}
   </main>
-  
   <footer>
-    <p>&copy; {% year %} - {{ clinica.nome }}</p>
-    <p>Telefone: {{ clinica.telefone }} | Email: {{ clinica.email }}</p>
+    <p>&copy; {% year %} - {{ clinica.nome }} - {{ clinica.slogan }}</p>
+    <p>Telefone: {{ clinica.telefone }} | Email: <a href="mailto:{{ clinica.email }}">{{ clinica.email }}</a></p>
   </footer>
 </body>
 </html>
