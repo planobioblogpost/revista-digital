@@ -1,7 +1,7 @@
 ---
 title: 5 Sinais de Alerta na Saúde de Cães Idosos
 autor: Dra. Ana Sofia Mendes
-image: /imagens/uploads/vetz.care-logo.png
+image: /imagens/uploads/logomarca%20Vetz.Care.png
 ---
 À medida que os nossos fiéis companheiros envelhecem, a atenção aos detalhes da sua saúde torna-se a nossa maior prioridade. Cães idosos podem não demonstrar dor ou desconforto da mesma forma que os mais jovens. Por isso, estar atento a pequenas mudanças no comportamento é crucial.
 
