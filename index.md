@@ -3,7 +3,25 @@ title: "VetZ.Care: Cuidado e Expertise para o seu Pet"
 layout: "base.njk"
 ---
 <div class="container">
-  <h2 class="section-title">Nossos Serviços  Clínicos</h2>
+
+  <h2 class="section-title">Novidades na Revista</h2>
+  <div class="card-grid">
+    {%- for artigo in collections.artigos | reverse | limit(3) -%}
+      <div class="card">
+        <a href="{{ artigo.url }}">
+          <img src="{{ artigo.data.image }}" alt="{{ artigo.data.title }}" class="card-image">
+        </a>
+        <div class="card-content">
+          <h3><a href="{{ artigo.url }}">{{ artigo.data.title }}</a></h3>
+          <p><em>Por: {{ artigo.data.autor }}</em></p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <hr>
+
+  <h2 class="section-title">Nossos Serviços Clínicos</h2>
   <div class="card-grid">
     <div class="card">
       <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop" alt="Cão idoso a ser examinado" class="card-image">
