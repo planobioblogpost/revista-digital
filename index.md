@@ -3,7 +3,7 @@ title: "VetZ.Care: Cuidado e Expertise para o seu Pet"
 layout: "base.njk"
 ---
 <div class="container">
-  <h2 class="section-title">Nossos Serviços Clínicos</h2>
+  <h2 class="section-title">Nossos Serviços  Clínicos</h2>
   <div class="card-grid">
     <div class="card">
       <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop" alt="Cão idoso a ser examinado" class="card-image">
