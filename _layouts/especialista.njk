@@ -1,0 +1,55 @@
+---
+layout: "base.njk"
+---
+<article class="container especialista-perfil">
+
+  <div class="especialista-header">
+    {% if foto %}
+      <img src="{{ foto }}" alt="Foto de {{ title }}" class="especialista-foto">
+    {% endif %}
+    <div class="especialista-info">
+      <h1 class="especialista-nome">{{ title }}</h1>
+      {% if crmv %}
+        <p class="especialista-credencial">CRMV: {{ crmv }}</p>
+      {% endif %}
+      {% if especialidades %}
+        <ul class="especialista-tags">
+          {% for especialidade in especialidades %}
+            <li>{{ especialidade }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="especialista-bio">
+    {{ content | safe }}
+  </div>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ title }}",
+  "jobTitle": "Médica Veterinária",
+  "worksFor": {
+    "@type": "VeterinaryCare",
+    "name": "{{ clinica.nome }}"
+  },
+  "image": "{{ foto }}",
+  "description": "{{ content | striptags | truncate(150) }}",
+  "knowsAbout": [{% for especialidade in especialidades %}"{{ especialidade }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+}
+</script>
+
+<style>
+  .especialista-perfil .especialista-header { display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+  .especialista-perfil .especialista-foto { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  .especialista-perfil .especialista-nome { margin: 0; }
+  .especialista-perfil .especialista-credencial { margin: 0.25rem 0; color: #777; font-size: 0.9em; }
+  .especialista-perfil .especialista-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin-top: 1rem; list-style: none; }
+  .especialista-perfil .especialista-tags li { background-color: #eaf3f5; color: var(--cor-verde-petroleo); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8em; }
+  .especialista-perfil .especialista-bio { max-width: 800px; }
+</style>
