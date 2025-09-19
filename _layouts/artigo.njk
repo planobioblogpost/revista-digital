@@ -1,49 +1,36 @@
 ---
 layout: "base.njk"
 ---
-<article class="container artigo-pagina">
-  <header class="artigo-cabecalho">
-    <h1 class="artigo-titulo">{{ title }}</h1>
-    <p class="artigo-autor">
-      Escrito por: <a href="/equipa/{{ autor | slugify }}/">{{ autor }}</a>
-    </p>
-    {% if image %}
-      <img src="{{ image }}" alt="{{ title }}" class="artigo-imagem-destaque">
-    {% endif %}
+<article class="artigo-pagina">
+  <header class="artigo-cabecalho" style="background-image: url('{{ image }}');">
+    <div class="artigo-cabecalho-overlay">
+      <div class="container">
+        <h1 class="artigo-titulo">{{ title }}</h1>
+        <p class="artigo-autor">
+          Escrito por: <a href="/equipa/{{ autor | slugify }}/">{{ autor }}</a>
+        </p>
+      </div>
+    </div>
   </header>
 
-  <div class="artigo-conteudo">
+  <div class="container artigo-conteudo">
     {{ content | safe }}
   </div>
 </article>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "{{ title }}",
-  "image": "{{ image }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ autor }}"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ clinica.nome }}"
-},
-  "datePublished": "{{ page.date | date }}",
-  "dateModified": "{{ page.date | date }}" // <-- LINHA ADICIONADA
-}
-}
-</script>
+<script type="application/ld+json">{...}</script>
 
 <style>
-  .artigo-pagina .artigo-cabecalho { text-align: center; margin-bottom: 2rem; }
-  .artigo-pagina .artigo-titulo { font-size: 2.8em; margin-bottom: 0.5rem; }
-  .artigo-pagina .artigo-autor { font-style: italic; color: #777; }
-  .artigo-pagina .artigo-autor a { color: var(--cor-verde-petroleo); text-decoration: none; }
-  .artigo-pagina .artigo-autor a:hover { text-decoration: underline; }
-  .artigo-pagina .artigo-imagem-destaque { width: 100%; max-width: 800px; height: auto; border-radius: 8px; margin-top: 1.5rem; }
-  .artigo-pagina .artigo-conteudo { max-width: 800px; margin: 0 auto; }
-  .artigo-pagina .artigo-conteudo h2 { margin-top: 2.5rem; }
+  .artigo-cabecalho { 
+    height: 50vh; background-size: cover; background-position: center; 
+    position: relative; color: white;
+  }
+  .artigo-cabecalho-overlay {
+    background: linear-gradient(to top, rgba(0, 60, 81, 0.8), rgba(0, 60, 81, 0.2));
+    height: 100%; display: flex; align-items: flex-end; padding-bottom: 3rem;
+  }
+  .artigo-cabecalho .artigo-titulo { color: white; font-size: 3.5em; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+  .artigo-cabecalho .artigo-autor a { color: white; }
+  .artigo-conteudo { padding-top: 2rem; max-width: 800px; }
+  .artigo-conteudo h2 { margin-top: 2.5rem; }
 </style>
