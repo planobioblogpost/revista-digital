@@ -1,7 +1,7 @@
 ---
 title: Dra. Ana Sofia Mendes
 crmv: '000-0001'
-foto: /imagens/uploads/Metz.Care-avaliacao-idoso.png
+foto: /imagens/uploads/Vetz.Care-avaliacao-cao-idoso.png
 especialidades:
   - Cuidados Preventivos
   - Geriatria Veterinária
