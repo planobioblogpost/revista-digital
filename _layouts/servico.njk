@@ -1,0 +1,43 @@
+---
+layout: "base.njk"
+---
+<article class="container servico-pagina">
+  
+  <header class="servico-cabecalho">
+    <h1 class="servico-titulo">{{ title }}</h1>
+    {% if image %}
+      <img src="{{ image }}" alt="{{ title }}" class="servico-imagem-destaque">
+    {% endif %}
+  </header>
+
+  <div class="servico-conteudo">
+    {{ content | safe }}
+  </div>
+
+  <div class="servico-cta">
+    <a href="https://wa.me/55{{ clinica.whatsapp }}?text={{ cta_whatsapp | urlencode }}" target="_blank" rel="noopener noreferrer" class="cta-button">
+      {{ cta_whatsapp }}
+    </a>
+  </div>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ title }}",
+  "description": "{{ content | striptags | truncate(150) }}",
+  "provider": {
+    "@type": "VeterinaryCare",
+    "name": "{{ clinica.nome }}"
+  }
+}
+</script>
+
+<style>
+  .servico-pagina .servico-cabecalho { text-align: center; margin-bottom: 2rem; }
+  .servico-pagina .servico-imagem-destaque { max-width: 100%; height: auto; border-radius: 8px; margin-top: 1.5rem; }
+  .servico-pagina .servico-conteudo { max-width: 800px; margin: 0 auto; }
+  .servico-pagina .servico-cta { text-align: center; margin-top: 2.5rem; }
+</style>
