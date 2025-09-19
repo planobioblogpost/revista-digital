@@ -10,28 +10,40 @@
   {
     "@context": "https://schema.org",
     "@type": "VeterinaryCare",
-    "name": "{{ clinica.nome }}",
-    "description": "{{ clinica.slogan }}",
-    "image": "/imagens/uploads/logomarca-Vetz.Care.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "{{ clinica.morada }}"
-    },
-    "telephone": "+55{{ clinica.telefone | replace('.', '') }}",
-    "email": "{{ clinica.email }}"
+    "name": "{{ clinica.nome }}", "description": "{{ clinica.slogan }}",
+    "image": "/imagens/VetZ.Care Logo.png", "address": { "@type": "PostalAddress", "streetAddress": "{{ clinica.morada }}" },
+    "telephone": "+55{{ clinica.telefone | replace('.', '') }}", "email": "{{ clinica.email }}"
   }
   </script>
 </head>
 <body>
-  <header>
-    <img src="/imagens/uploads/logomarca-Vetz.Care.png" alt="Logótipo da {{ clinica.nome }}" height="70">
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <img src="/imagens/VetZ.Care Logo.png" alt="Logótipo da {{ clinica.nome }}">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/servicos/">Serviços</a></li>
+          <li><a href="/produtos/">Produtos</a></li>
+          <li><a href="/blog/">Revista</a></li>
+          <li><a href="/equipa/">Corpo Clínico</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+  
   <main>
     {{ content | safe }}
   </main>
-  <footer>
-    <p>&copy; {% year %} - {{ clinica.nome }} - {{ clinica.slogan }}</p>
-    <p>Telefone: {{ clinica.telefone }} | Email: <a href="mailto:{{ clinica.email }}">{{ clinica.email }}</a></p>
+  
+  <footer class="site-footer">
+    <div class="container">
+      <p>{{ clinica.slogan }}</p>
+      <p>&copy; {% year %} - {{ clinica.nome }}</p>
+      <p>Telefone: {{ clinica.telefone }} | Email: <a href="mailto:{{ clinica.email }}">{{ clinica.email }}</a></p>
+    </div>
   </footer>
 </body>
 </html>
