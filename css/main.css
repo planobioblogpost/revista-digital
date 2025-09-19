@@ -1,43 +1,49 @@
-/* Estilos básicos para um bom layout */
-body { font-family: sans-serif; line-height: 1.6; margin: 0; }
-main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+:root {
+  --cor-azul-escuro: #003C51;
+  --cor-verde-petroleo: #1E8299;
+  --cor-laranja-destaque: #FF9934;
+  --cor-texto: #333;
+  --cor-fundo: #fdfdfd;
+  --cor-branco: #ffffff;
+}
 
-/* Grelha para os cards */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6; margin: 0; background-color: var(--cor-fundo); color: var(--cor-texto);
+}
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+h1, h2, h3 { color: var(--cor-azul-escuro); line-height: 1.2; }
+
+header {
+  background-color: var(--cor-branco);
+  padding: 1rem 1.5rem; text-align: center;
+  border-bottom: 1px solid #eee;
+}
+header img { max-height: 70px; margin-bottom: 0.5rem; }
+
+.section-title { text-align: center; margin-bottom: 2rem; font-size: 2.5em; }
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 0;
-  margin: 2rem 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem; padding: 0; margin: 2rem 0;
 }
-
-/* Estilo do Card Individual */
 .card {
-  list-style: none;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+  list-style: none; background-color: var(--cor-branco); border-radius: 8px;
+  overflow: hidden; box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.card:hover { transform: translateY(-5px); box-shadow: 0px 12px 25px rgba(0,0,0,0.12); }
+.card-content { padding: 1.5rem; }
+.card-content h3 { margin-top: 0; color: var(--cor-verde-petroleo); }
+.card-image { width: 100%; height: 200px; object-fit: cover; display: block; }
+.cta-button {
+  display: inline-block; background-color: var(--cor-laranja-destaque); color: var(--cor-branco);
+  padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold;
+  transition: background-color 0.3s;
+}
+.cta-button:hover { background-color: #e68a2e; }
 
-.card-content {
-  padding: 1.5rem;
+footer {
+  text-align: center; margin-top: 3rem; padding: 2rem 1.5rem;
+  background-color: var(--cor-azul-escuro); color: var(--cor-branco); font-size: 0.9em;
 }
-
-.card-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-/* --- A Tecnologia de Movimento --- */
-.card-image.interactive-effect {
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.card:hover .card-image.interactive-effect {
-  transform: scale(1.05);
-  box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
-}
+footer a { color: var(--cor-laranja-destaque); }
